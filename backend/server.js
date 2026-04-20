@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
@@ -12,6 +13,6 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(process.env.PORT || 5000, () => console.log("Server running on port 5000"));
 
 // The starting point of your backend application
