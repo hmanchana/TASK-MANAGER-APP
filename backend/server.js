@@ -7,12 +7,17 @@ const taskRoutes = require("./routes/tasks");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://d3m4yz0t9jokey.cloudfront.net"
+}));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
 
-app.listen(process.env.PORT || 5000, () => console.log("Server running on port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 // The starting point of your backend application

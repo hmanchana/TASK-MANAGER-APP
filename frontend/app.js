@@ -1,4 +1,4 @@
-const API = "http://localhost:5000/api";
+const API = "https://d3kb4k6oyqodnr.cloudfront.net/api";
 
 async function login() {
   const res = await fetch(`${API}/auth/login`, {
